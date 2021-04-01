@@ -5,6 +5,9 @@ const TYPE = {
   p: "png",
   g: "gif",
 };
+function linkify(id){
+  return 'https://nhentai.net/g/' + id; 
+}
 /**
  * Filters the info of a single doujin
  * @param {string} response
@@ -45,6 +48,7 @@ function details(response) {
   details.push({
     id: response.id,
     title: response.title,
+    link: linkify(response.id),
     upload_date_pretty: moment(new Date(response.upload_date * 1000)).format(
       "MMMM Do YYYY, h:mm:ss a"
     ),
@@ -116,6 +120,7 @@ function querydata(response) {
     details.push({
       id: resu.id,
       name: resu.name,
+      link: linkify(response.id),
       upload_date_pretty: moment(new Date(resu.upload_date * 1000)).format(
         "MMMM Do YYYY, h:mm:ss a"
       ),
