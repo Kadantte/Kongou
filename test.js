@@ -12,8 +12,8 @@ async function test(Type) {
     console.log("", "\n", "\n");
     console.log("Starting QUERY function...");
     await nhentai
-      .query("Kantai Collection", "popular", 1)
-      .then((data) => console.log(data[0].tags));
+      .query("fuckingcuntno", "popular", 1)
+      .then((data) => console.log(data));
   }
 
   async function SEARCH() {

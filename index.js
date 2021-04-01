@@ -3,12 +3,12 @@ const { details, querydata, searchdata } = require("./src/parse.js");
 const baseurl = "https://nhentai.net/api/";
 const querypath = "https://nhentai.net/api/galleries/search?query=";
 
-class hentaiJS {
+class hentaijs {
   /**
    * Get doujin details
    * @param {string|number} id Gallery ID
    * @returns Response.json
-   * @memberof hentaiJS
+   * @memberof hentaijs
    */
   async get(id) {
     let funcurl = baseurl + "gallery/" + id;
@@ -31,18 +31,29 @@ class hentaiJS {
   async query(words, sort, page) {
     let funcurl;
 
-    if (!arguments[0])
-      return console.log("Failed to execute: No keywords provided"); //new Error("Failed to execute: No keywords provided");
-    if (!sort && !page) {
-      funcurl = querypath + words;
-    }
-    if (!page) {
-      funcurl = querypath + words + "&sort=" + sort;
-    } else funcurl = querypath + words + "&sort=" + sort + "&page=" + page;
+    if (arguments.length === 0) {
+      console.log("Failed to execute: No keywords provided");
+      new Error("Failed to execute: No keywords provided");
+      return;
+    } else {
+      if (!sort && !page) {
+        funcurl = querypath + words;
+      }
+      if (!page) {
+        funcurl = querypath + words + "&sort=" + sort;
+      } else funcurl = querypath + words + "&sort=" + sort + "&page=" + page;
 
-    const response = await fetch(funcurl);
-    const datarized = querydata(await response.json());
-    return datarized;
+      const response = await fetch(funcurl);
+      const rest = await response.json();
+      if (rest.result.length === 0) {
+        console.log("No results were found.");
+        new Error("Failed to execute: No results for the given keywords.");
+        return;
+      } else {
+        const datarized = querydata(rest);
+        return datarized;
+      }
+    }
   }
   /**
    * Search from a certain keyword and returns the first most result.
@@ -52,15 +63,19 @@ class hentaiJS {
    */
   async search(words) {
     let funcurl;
-    if (!arguments[0])
-      return console.log("Failed to execute: No keywords provided");
-    //new Error("Failed to execute: No keywords provided");
-    else funcurl = querypath + words + "&sort=popular" + "&page=1";
-    const response = await fetch(funcurl);
-    const data = await response.json();
-    const datarized = details(data.result[0]);
-    return datarized;
+    if (arguments.length === 0) {
+      console.log("Failed to execute: No keywords provided");
+      new Error("Failed to execute: No keywords provided");
+      return;
+    } else {
+      funcurl = querypath + words + "&sort=popular" + "&page=1";
+
+      const response = await fetch(funcurl);
+      const data = await response.json();
+      const datarized = details(data.result[0]);
+      return datarized;
+    }
   }
 }
 
-module.exports = hentaiJS;
+module.exports = hentaijs;
