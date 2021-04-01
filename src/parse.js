@@ -42,6 +42,7 @@ function details(response) {
         id: tag.id,
         name: capitalize(tag.name),
         url: tagify(tag.url),
+        hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
         count: tag.count,
       });
     }
@@ -50,6 +51,7 @@ function details(response) {
         id: tag.id,
         name: capitalize(tag.name),
         url: tagify(tag.url),
+        hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
         count: tag.count,
       });
     if (tag.type === "tag")
@@ -57,6 +59,7 @@ function details(response) {
         id: tag.id,
         name: capitalize(tag.name),
         url: tagify(tag.url),
+        hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
         count: tag.count,
       });
   });
@@ -122,6 +125,7 @@ function querydata(response) {
           id: tag.id,
           name: capitalize(tag.name),
           url: tagify(tag.url),
+          hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
           count: tag.count,
         });
       if (tag.type === "tag")
@@ -129,6 +133,7 @@ function querydata(response) {
           id: tag.id,
           name: capitalize(tag.name),
           url: tagify(tag.url),
+          hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
           count: tag.count,
         });
     });
