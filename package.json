@@ -1,6 +1,6 @@
 {
   "name": "nhentai-js",
-  "version": "1.0.0",
+  "version": "dev",
   "description": "nHentai API wrapper for JS",
   "main": "index.js",
   "scripts": {
