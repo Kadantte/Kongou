@@ -2,4 +2,5 @@
 
 NodeJS wrapper for nhentai's API.
 Read wiki for more info
-# nhentai-js
+
+***This is DEV branch, check stable or v1 branches for working releases**
