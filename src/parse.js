@@ -143,7 +143,7 @@ function querydata(response) {
     details.push({
       id: resu.id,
       title: resu.title,
-      link: linkify(response.id),
+      link: linkify(resu.id),
       upload_date_pretty: moment(new Date(resu.upload_date * 1000)).format(
         "MMMM Do YYYY, h:mm:ss a"
       ),

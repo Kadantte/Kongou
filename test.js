@@ -13,7 +13,7 @@ async function test(Type) {
     console.log("Starting QUERY function...");
     await nhentai
       .query("Kantai Collection", "popular", 1)
-      .then((data) => console.log(data));
+      .then((data) => console.log(data[0].tags));
   }
 
   async function SEARCH() {
