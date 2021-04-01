@@ -1,12 +1,25 @@
 const moment = require("moment");
+const usrlink = "https://nhentai.net";
 const baselink = "https://i.nhentai.net/galleries/";
 const TYPE = {
   j: "jpg",
   p: "png",
   g: "gif",
 };
-function linkify(id){
-  return 'https://nhentai.net/g/' + id; 
+function linkify(id) {
+  return usrlink + "/g/" + id;
+}
+function tagify(link) {
+  return usrlink + link;
+}
+function capitalize(str) {
+  const string = str
+    .toString()
+    .split("_")
+    .map(
+      (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase()
+    );
+  return string[0];
 }
 /**
  * Filters the info of a single doujin
@@ -27,20 +40,25 @@ function details(response) {
     if (tag.type === "language") {
       langauge.push({
         id: tag.id,
-        name: tag.name,
-        url: tag.url,
+        name: capitalize(tag.name),
+        url: tagify(tag.url),
         count: tag.count,
       });
     }
     if (tag.type === "category")
       category.push({
         id: tag.id,
-        name: tag.name,
-        url: tag.url,
+        name: capitalize(tag.name),
+        url: tagify(tag.url),
         count: tag.count,
       });
     if (tag.type === "tag")
-      tags.push({ id: tag.id, name: tag.name, url: tag.url, count: tag.count });
+      tags.push({
+        id: tag.id,
+        name: capitalize(tag.name),
+        url: tagify(tag.url),
+        count: tag.count,
+      });
   });
   response.images.pages.forEach((page, i) => {
     images.push(`${baselink}${response.media_id}/${[i + 1]}.${TYPE[page.t]}`);
@@ -94,23 +112,23 @@ function querydata(response) {
       if (tag.type === "language") {
         langauge.push({
           id: tag.id,
-          name: tag.name,
-          url: tag.url,
+          name: capitalize(tag.name),
+          url: tagify(tag.url),
           count: tag.count,
         });
       }
       if (tag.type === "category")
         category.push({
           id: tag.id,
-          name: tag.name,
-          url: tag.url,
+          name: capitalize(tag.name),
+          url: tagify(tag.url),
           count: tag.count,
         });
       if (tag.type === "tag")
         tags.push({
           id: tag.id,
-          name: tag.name,
-          url: tag.url,
+          name: capitalize(tag.name),
+          url: tagify(tag.url),
           count: tag.count,
         });
     });

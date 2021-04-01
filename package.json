@@ -1,15 +1,27 @@
 {
   "name": "nhentai-js",
-  "version": "1.0.0",
-  "description": "nHentai API wrapper for JS",
+  "version": "1.2.0",
+  "description": "A Node.js wrapper that directly uses the API",
   "main": "index.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "author": "Curmudgeon",
-  "license": "ISC",
   "dependencies": {
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cCurmudgeon/nhentai-js.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Curmudgeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cCurmudgeon/nhentai-js/issues"
+  },
+  "homepage": "https://github.com/cCurmudgeon/nhentai-js#readme"
 }
