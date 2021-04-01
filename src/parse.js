@@ -137,7 +137,7 @@ function querydata(response) {
     });
     details.push({
       id: resu.id,
-      name: resu.name,
+      title: resu.title,
       link: linkify(response.id),
       upload_date_pretty: moment(new Date(resu.upload_date * 1000)).format(
         "MMMM Do YYYY, h:mm:ss a"
