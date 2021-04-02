@@ -5,23 +5,23 @@ const testType = 2; // 1 for GET, 2 for QUERY, 3 for SEARCH
 async function test(Type) {
   async function GET() {
     console.log("Starting GET function...");
-    await nhentai.get("353103").then((data) => console.log(data));
+    const data = await nhentai.get(231);
+    console.log(data); //.catch((error) => console.log(error));
   }
 
   async function QUERY() {
     console.log("", "\n", "\n");
     console.log("Starting QUERY function...");
-    await nhentai
-      .query("fuckingcuntno", "popular", 1)
-      .then((data) => console.log(data));
+    const data = await nhentai
+      .query("loli", "popular", 1);
+    console.log(data);
   }
 
   async function SEARCH() {
     console.log("", "\n", "\n");
     console.log("Starting SEARCH function...");
-    await nhentai
-      .search("Kantai Collection")
-      .then((data) => console.log(data.details.id));
+    const data = await nhentai.search("Kantai Collection");
+    console.log(data);
   }
   if (Type === 1) GET();
   else if (Type === 2) QUERY();
