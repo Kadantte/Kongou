@@ -1,7 +1,7 @@
 //Run npm run test
 const hentaijs = require("./index");
 const nhentai = new hentaijs();
-const testType = 2; // 1 for GET, 2 for QUERY, 3 for SEARCH
+const testType = 3; // 1 for GET, 2 for QUERY, 3 for SEARCH
 async function test(Type) {
   async function GET() {
     console.log("Starting GET function...");
@@ -10,7 +10,7 @@ async function test(Type) {
   }
 
   async function QUERY() {
-    console.log("", "\n", "\n");
+    console.log(" ", "\n", "\n");
     console.log("Starting QUERY function...");
     const data = await nhentai
       .query("loli", "popular", 1);
@@ -18,7 +18,7 @@ async function test(Type) {
   }
 
   async function SEARCH() {
-    console.log("", "\n", "\n");
+    console.log(" ", "\n", "\n");
     console.log("Starting SEARCH function...");
     const data = await nhentai.search("Kantai Collection");
     console.log(data);
