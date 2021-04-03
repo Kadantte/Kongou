@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { details, querydata, searchdata } = require("./parse.js");
+const { details, querydata } = require("./parse.js");
 const { qlink } = require("./Options/links");
 const baseurl = "https://nhentai.net/api/";
 
