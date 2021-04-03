@@ -9,14 +9,14 @@ const TYPE = {
 function detailify(response) {
   let details = [];
   let info = [];
-  let langauge = [];
+  let language = [];
   let category = [];
   let tags = [];
   let images = [];
   let result = [];
   response.tags.forEach((tag) => {
     if (tag.type === "language") {
-      langauge.push({
+      language.push({
         id: tag.id,
         name: capitalize(tag.name),
         url: tagify(tag.url),
@@ -63,7 +63,7 @@ function detailify(response) {
   result.push({
     details: details[0],
     info: info[0],
-    langauge: langauge,
+    language: language,
     category: category,
     tags: tags,
     images: images,
