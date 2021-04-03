@@ -1,6 +1,6 @@
 {
-  "name": "nhentai-js",
-  "version": "1.2.0",
+  "name": "hentai",
+  "version": "2.0.0",
   "description": "A Node.js wrapper that directly uses the API",
   "main": "index.js",
   "dependencies": {
@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/cCurmudgeon/nhentai-js/issues"
   },
-  "homepage": "https://github.com/cCurmudgeon/nhentai-js#readme"
+  "homepage": "https://github.com/cCurmudgeon/nhentai-js#readme",
+  "devDependencies": {}
 }
