@@ -3,7 +3,7 @@ const { details, querydata, searchdata } = require("./parse.js");
 const { qlink } = require("./Options/links");
 const baseurl = "https://nhentai.net/api/";
 
-class hentaijs {
+class nhentaijs {
   /**
    * Get doujin details
    * @param {string|number} id Gallery ID
@@ -50,7 +50,6 @@ class hentaijs {
         }
       }
       let funurl = qlink(words, sort, page);
-      console.log(funurl);
       const response = await fetch(funurl);
       const rest = await response.json();
       if (rest.result.length === 0) {
@@ -67,15 +66,18 @@ class hentaijs {
    * @returns response data in an array
    * @memberof hentaiJS
    */
-  async search(words) {
-    if (arguments.length === 0) {
-      reject(new Error("Failed to execute: No keywords provided"));
-    }
-    const response = await fetch(funcurl);
-    const data = await response.json();
-    const datarized = details(data.result[0]);
-    return datarized;
+  async search(words, sort = 'popular', page = 1) {
+    return new Promise(async (resolve, reject) => {
+      if (words.length === 0) {
+        reject(new Error("Failed to execute: No keywords provided"));
+      }
+      const funurl = qlink(words, sort, page);
+      const response = await fetch(funurl);
+      const data = await response.json();
+      const datarized = details(data.result[0]);
+      resolve(datarized);
+    });
   }
 }
 
-module.exports = hentaijs;
+module.exports = nhentaijs;
