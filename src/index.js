@@ -1,14 +1,14 @@
 const fetch = require("node-fetch");
-const { details, querydata, searchdata } = require("./parse.js");
+const { details, querydata } = require("./parse.js");
 const { qlink } = require("./Options/links");
 const baseurl = "https://nhentai.net/api/";
 
-class nhentaijs {
+class kongou {
   /**
    * Get doujin details
    * @param {string|number} id Gallery ID
    * @returns Response.json
-   * @memberof hentaijs
+   * @memberof kongou
    */
   async get(id) {
     return new Promise(async (resolve, reject) => {
@@ -30,7 +30,7 @@ class nhentaijs {
    * @param {string} sort
    * @param {number} page
    * @returns response data in an array
-   * @memberof hentaiJS
+   * @memberof kongou
    */
 
   async query(words, sort, page) {
@@ -63,7 +63,7 @@ class nhentaijs {
    * Search from a certain keyword and returns the first most result.
    * @param {string} keyword
    * @returns response data in an array
-   * @memberof hentaiJS
+   * @memberof kongou
    */
   async search(words, sort = 'popular', page = 1) {
     return new Promise(async (resolve, reject) => {
@@ -79,4 +79,4 @@ class nhentaijs {
   }
 }
 
-module.exports = nhentaijs;
+module.exports = kongou;

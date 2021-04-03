@@ -4,7 +4,7 @@ const { queryfy } = require("./Parse/queryfy");
  * Filters the info of a single doujin
  * @param {string} response
  * @returns Object
- * @memberof
+ * @memberof Parse
  * Parse
  */
 function details(response) {
