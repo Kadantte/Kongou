@@ -1,7 +1,7 @@
 //Run npm run test
 const kongou = require("./index");
 const nhentai = new kongou();
-const testType = 3; // 1 for GET, 2 for QUERY, 3 for SEARCH
+const testType = 4; // 1 for GET, 2 for QUERY, 3 for SEARCH
 async function test(Type) {
   async function GET() {
     console.log("Starting GET function...");
@@ -25,7 +25,10 @@ async function test(Type) {
   else if (Type === 2) QUERY();
   else if (Type === 3) SEARCH();
   else {
-    console.log("NO PLS NO");
+    GET();
+    QUERY();
+    SEARCH();
+
   }
 }
 test(testType);
