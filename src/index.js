@@ -16,7 +16,6 @@ class nhentaijs {
         reject(new Error("Failed to execute: ID is not a number"));
       }
       const response = await fetch(baseurl + "gallery/" + id);
-      //console.log(await response.json());
       const datarized = await details(await response.json());
       console.log(datarized);
       resolve(datarized);
