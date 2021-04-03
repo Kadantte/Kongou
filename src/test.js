@@ -1,6 +1,6 @@
 //Run npm run test
-const hentaijs = require("./index");
-const nhentai = new hentaijs();
+const nhentaijs = require("./index");
+const nhentai = new nhentaijs();
 const testType = 3; // 1 for GET, 2 for QUERY, 3 for SEARCH
 async function test(Type) {
   async function GET() {

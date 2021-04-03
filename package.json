@@ -1,5 +1,5 @@
 {
-  "name": "@ccurmudgeon/hentaijs",
+  "name": "nhentaijs",
   "version": "2.0.0",
   "description": "A Node.js wrapper that directly uses the nhentai's API",
   "main": "index.js",
