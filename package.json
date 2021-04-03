@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cCurmudgeon/nhentaijs.git"
+    "url": "git+https://github.com/cCurmudgeon/kongou.git"
   },
   "keywords": [
     "javascript"
@@ -21,8 +21,8 @@
   "author": "Curmudgeon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cCurmudgeon/nhentaijs/issues"
+    "url": "https://github.com/cCurmudgeon/kongou/issues"
   },
-  "homepage": "https://github.com/cCurmudgeon/nhentaijs#readme",
+  "homepage": "https://github.com/cCurmudgeon/kongou#readme",
   "devDependencies": {}
 }
