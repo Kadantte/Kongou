@@ -1,17 +1,20 @@
+# **Kongou**
 
-<a href="https://i.imgur.com/6geUHqy.png"><img src="https://i.imgur.com/6geUHqy.png" title="The goddess: 1st battlecruiser, Kongō class," /></a>
-[<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)<p align=center>
+<a href="https://i.imgur.com/6geUHqy.png">
+<img align=center title="1st battlecruiser, Kongō class" src="https://i.imgur.com/6geUHqy.png"/>
+</a>
 
-```
+[<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)
+
+```;
 The ShipGirl Project, feat Kongou; ⓒ Kancolle
 ```
 
-[![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
-***
-# Kongou
-A node.js battleship that directly uses nhentai's API.
+**A node.js battleship that directly uses nhentai's API.**<br>
 
-### Features
+
+
+## Features
 
 ✅ Simple
 
@@ -21,28 +24,28 @@ A node.js battleship that directly uses nhentai's API.
 
 ✅ Cutest shipgirl ❤ (Very Important)
 
+## Installation
 
-### Installation
-
-```
+```bash
 npm i kongou
 ```
 
-### Documentation
 
-> https://github.com/cCurmudgeon/Kongou/wiki
+## [Documentation](https://github.com/cCurmudgeon/Kongou/wiki)
+<br>
 
-### Example
+
+## Examples
+
 ```js
 const kongou = require("kongou");
 const nhentai = new kongou();
 
-  async function Q() {
-    const data = await nhentai.query('艦隊これくしょん');
-    console.log(data);
-  }
+async function Q() {
+  const data = await nhentai.query("艦隊これくしょん");
+  console.log(data);
+}
 Q();
-
 ```
 
 or
@@ -51,10 +54,11 @@ or
 const kongou = require("kongou");
 const nhentai = new kongou();
 async function Q() {
-await nhentai.query('艦隊これくしょん').then((data) => console.log(data));
+  await nhentai.query("艦隊これくしょん").then((data) => console.log(data));
 }
 Q();
-
 ```
 
-For more information check the wiki.
+For more information check the [wiki](https://github.com/cCurmudgeon/Kongou/wiki).
+
+[![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
