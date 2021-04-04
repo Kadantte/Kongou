@@ -3,8 +3,10 @@
 [<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)<p align=center>
 
 ```
-The ShipGirl Project, feat Shoukaku; ⓒ Kancolle
+The ShipGirl Project, feat Kongou; ⓒ Kancolle
 ```
+
+[![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
 ***
 # Kongou
 A node.js battleship that directly uses nhentai's API.
@@ -31,7 +33,7 @@ npm i kongou
 > https://github.com/cCurmudgeon/Kongou/wiki
 
 ### Example
-```
+```js
 const kongou = require("kongou");
 const nhentai = new kongou();
 
@@ -45,7 +47,7 @@ Q();
 
 or
 
-```
+```js
 const kongou = require("kongou");
 const nhentai = new kongou();
 async function Q() {
