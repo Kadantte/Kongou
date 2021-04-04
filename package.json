@@ -1,6 +1,6 @@
 {
   "name": "kongou",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "A Node.js wrapper that directly uses the nhentai's API",
   "main": "./src/index.js",
   "dependencies": {
