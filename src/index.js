@@ -11,13 +11,13 @@ class kongou {
    * @returns Response.json
    * @memberof kongou
    */
-  async get(id) {
+  async get(i) {
+    const id = parseInt(i);
     return new Promise(async (resolve, reject) => {
       checkInput(undefined, undefined, undefined, id);
       const rest = await fetch(baseurl + "gallery/" + id);
       checkOutput(rest);
       const datarized = await details(await rest.json());
-      console.log(datarized);
       resolve(datarized);
     });
   }
@@ -30,7 +30,9 @@ class kongou {
    * @memberof kongou
    */
 
-  async query(words, sort, page) {
+  async query(words, s, p) {
+    const sort = parseInt(s);
+    const page = parseInt(p);
     return new Promise(async (resolve, reject) => {
       checkInput(words, sort, page, undefined);
       let funurl = qlink(words, sort, page);
@@ -48,7 +50,7 @@ class kongou {
    * @returns response data in an array
    * @memberof kongou
    */
-  async search(words, sort = "popular", page = 1) {
+  async search(words, sort = 3, page = 1) {
     return new Promise(async (resolve, reject) => {
       checkInput(words, sort, page, undefined);
       const funurl = qlink(words, sort, page);
