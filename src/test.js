@@ -1,7 +1,7 @@
 //Run npm run test
 const kongou = require("./index");
 const nhentai = new kongou();
-const testType = 1; // 1 for GET, 2 for QUERY, 3 for SEARCH
+const testType = 3; // 1 for GET, 2 for QUERY, 3 for SEARCH
 async function test(Type) {
   async function GET() {
     console.log("Starting GET function...");
@@ -12,7 +12,7 @@ async function test(Type) {
   async function QUERY() {
     console.log("Starting QUERY function...");
     const data = await nhentai
-      .query("", "popular", 1);
+      .query("kongou", "popular", 1);
     console.log(data);
   }
 

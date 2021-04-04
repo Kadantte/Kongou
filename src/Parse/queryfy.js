@@ -11,14 +11,14 @@ function queryfy(response) {
   response.result.forEach((resu) => {
     let details = [];
     let info = [];
-    let langauge = [];
+    let language = [];
     let category = [];
     let tags = [];
     let images = [];
 
     resu.tags.forEach((tag) => {
       if (tag.type === "language") {
-        langauge.push({
+        language.push({
           id: tag.id,
           name: capitalize(tag.name),
           url: tagify(tag.url),
@@ -62,7 +62,7 @@ function queryfy(response) {
     query.push({
       details: details[0],
       info: info[0],
-      langauge: langauge[0],
+      language: language[0],
       category: category[0],
       tags: tags,
       images: images,

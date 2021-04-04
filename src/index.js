@@ -55,7 +55,7 @@ class kongou {
       const response = await fetch(funurl);
       const rest = await response.json();
       checkOutput(rest);
-      const datarized = await querydata(rest);
+      const datarized = await details(rest.result[0]);
       resolve(datarized);
     });
   }
