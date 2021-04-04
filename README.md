@@ -33,7 +33,7 @@ npm i kongou
 > https://github.com/cCurmudgeon/Kongou/wiki
 
 ### Example
-```
+```js
 const kongou = require("kongou");
 const nhentai = new kongou();
 
@@ -47,7 +47,7 @@ Q();
 
 or
 
-```
+```js
 const kongou = require("kongou");
 const nhentai = new kongou();
 async function Q() {
