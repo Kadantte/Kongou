@@ -22,6 +22,7 @@ function queryfy(response) {
           id: tag.id,
           name: capitalize(tag.name),
           url: tagify(tag.url),
+          hyptxt: `[${capitalize(tag.name)}](${tagify(tag.url)})`,
           count: tag.count,
         });
       }
