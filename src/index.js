@@ -15,32 +15,29 @@ class kongou {
     const id = parseInt(i);
     return new Promise(async (resolve, reject) => {
       checkInput(undefined, undefined, undefined, id);
-      const rest = await fetch(baseurl + "gallery/" + id);
-      checkOutput(rest);
-      const datarized = await details(await rest.json());
-      resolve(datarized);
+      const response = await fetch(baseurl + "gallery/" + id);
+      const data = await response.json();
+      checkOutput(data);
+      resolve(details(data));
     });
   }
 
   /**
    * Search from a certain keyword.
-   *
    * **These parameters should be in the order specified else they won't work**
    * @returns response data in an array
    * @memberof kongou
    */
 
-  async query(words, s, p) {
-    const sort = parseInt(s);
-    const page = parseInt(p);
+  async query(words, sort, page) {
     return new Promise(async (resolve, reject) => {
-      checkInput(words, sort, page, undefined);
-      let funurl = qlink(words, sort, page);
-      const response = await fetch(funurl);
-      const rest = await response.json();
-      checkOutput(rest);
-      const datarized = await querydata(rest);
-      resolve(datarized);
+      checkInput(words, parseInt(sort), parseInt(page), undefined);
+      const response = await fetch(
+        encodeURI(qlink(words, parseInt(sort), parseInt(page)))
+      );
+      const data = await response.json();
+      checkOutput(data);
+      resolve(querydata(data));
     });
   }
 
@@ -52,13 +49,13 @@ class kongou {
    */
   async search(words, sort = 3, page = 1) {
     return new Promise(async (resolve, reject) => {
-      checkInput(words, sort, page, undefined);
-      const funurl = qlink(words, sort, page);
-      const response = await fetch(funurl);
-      const rest = await response.json();
-      checkOutput(rest);
-      const datarized = await details(rest.result[0]);
-      resolve(datarized);
+      checkInput(words, parseInt(sort), parseInt(page), undefined);
+      const response = await fetch(
+        encodeURI(qlink(words, parseInt(sort), parseInt(page)))
+      );
+      const data = await response.json();
+      checkOutput(data);
+      resolve(details(data.result[0]));
     });
   }
 }
