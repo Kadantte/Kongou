@@ -11,14 +11,13 @@ async function test(Type) {
 
   async function QUERY() {
     console.log("Starting QUERY function...");
-    const data = await nhentai
-      .query("kongou", "3", "1");
+    const data = await nhentai.query("艦これ", "3", "1");
     console.log(data);
   }
 
   async function SEARCH() {
     console.log("Starting SEARCH function...");
-    const data = await nhentai.search("Kantai Collection");
+    const data = await nhentai.search("艦これ");
     console.log(data);
   }
   if (Type === 1) GET();
@@ -28,7 +27,6 @@ async function test(Type) {
     GET();
     QUERY();
     SEARCH();
-
   }
 }
 test(testType);
