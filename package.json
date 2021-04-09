@@ -1,11 +1,10 @@
 {
   "name": "kongou",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "A Node.js wrapper that directly uses the nhentai's API",
   "main": "./src/index.js",
   "dependencies": {
     "colors": "^1.4.0",
-    "jshint": "^2.12.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
   },
@@ -24,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/cCurmudgeon/kongou/issues"
   },
-  "homepage": "https://github.com/cCurmudgeon/kongou#readme"
+  "homepage": "https://github.com/cCurmudgeon/kongou#readme",
+  "devDependencies": {
+    "jshint": "^2.12.0"
+  }
 }
