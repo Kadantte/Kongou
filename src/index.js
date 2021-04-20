@@ -11,11 +11,10 @@ class kongou {
    * @returns Response.json
    * @memberof kongou
    */
-  async get(i) {
-    const id = parseInt(i);
-    return new Promise(async (resolve, reject) => {
-      checkInput(undefined, undefined, undefined, id);
-      const response = await fetch(baseurl + "gallery/" + id);
+  async get(id) {
+    return new Promise(async (resolve) => {
+      checkInput(undefined, undefined, undefined, parseInt(id));
+      const response = await fetch(baseurl + "gallery/" + parseInt(id));
       const data = await response.json();
       checkOutput(data);
       resolve(details(data));
@@ -30,7 +29,7 @@ class kongou {
    */
 
   async query(words, sort, page) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
       checkInput(words, parseInt(sort), parseInt(page), undefined);
       const response = await fetch(
         encodeURI(qlink(words, parseInt(sort), parseInt(page)))
@@ -48,7 +47,7 @@ class kongou {
    * @memberof kongou
    */
   async search(words, sort = 3, page = 1) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
       checkInput(words, parseInt(sort), parseInt(page), undefined);
       const response = await fetch(
         encodeURI(qlink(words, parseInt(sort), parseInt(page)))
