@@ -32,7 +32,24 @@ npm i kongou
 
 
 ## [Documentation](https://github.com/cCurmudgeon/Kongou/wiki)
-<br>
+
+### Functions
+
+1. [get()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#getnumber)
+2. [query()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#querykeyword-sort-page)
+3. [search()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#searchkeyword)
+
+### Examples
+
+1. [get()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#get)
+2. [query()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#query)
+3. [search()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#search)
+
+### Options
+ 
+1. [Sort](https://github.com/cCurmudgeon/Kongou/wiki/Options#sort)
+2. [Keyword](https://github.com/cCurmudgeon/Kongou/wiki/Options#keyword)
+3. [Page](https://github.com/cCurmudgeon/Kongou/wiki/Options#page)
 
 
 ## Examples
