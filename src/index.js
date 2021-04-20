@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { details, querydata } = require("./parse.js");
+const { details, queryData } = require("./Options/parse");
 const { qlink } = require("./Options/links");
 const { checkInput, checkOutput } = require("./Options/filters");
 const baseurl = "https://nhentai.net/api/";
@@ -37,7 +37,7 @@ class kongou {
       );
       const data = await response.json();
       checkOutput(data);
-      resolve(querydata(data));
+      resolve(queryData(data));
     });
   }
 
