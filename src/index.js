@@ -8,7 +8,7 @@ class kongou {
   /**
    * Get doujin details
    * @param {string|number} id Gallery ID
-   * @returns Response.json
+   * @returns response.json
    * @memberof kongou
    */
   async get(id) {
@@ -23,8 +23,11 @@ class kongou {
 
   /**
    * Search from a certain keyword.
+   * @param {string} words
+   * @param {string|number} sort
+   * @param {string|number} page
    * **These parameters should be in the order specified else they won't work**
-   * @returns response data in an array
+   * @returns response.json
    * @memberof kongou
    */
 
@@ -42,8 +45,8 @@ class kongou {
 
   /**
    * Search from a certain keyword and returns the first most result.
-   * @param {string} keyword
-   * @returns response data in an array
+   * @param {string} words
+   * @returns response.json
    * @memberof kongou
    */
   async search(words, sort = 3, page = 1) {
