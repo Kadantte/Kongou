@@ -47,13 +47,13 @@ function details(response) {
     id: response.id,
     title: response.title,
     link: linkify(response.id),
-    upload_date_pretty: moment(new Date(response.upload_date * 1000)).format(
-      "MMMM Do YYYY, h:mm:ss a"
-    ),
-    scanlator: response.scanlantor
-      ? response.scanlator
-      : "No scanlator specified.",
-    upload_date: new Date(response.upload_date * 1000),
+    upload_date: {
+      upload_date: new Date(response.upload_date * 1000),
+      pretty: moment(new Date(response.upload_date * 1000)).format(
+        "MMMM Do YYYY, h:mm:ss a"
+      ),
+    },
+    scanlator: response.scanlator,
     num_pages: response.num_pages,
     num_favorites: response.num_favorites,
   });
@@ -109,11 +109,13 @@ function queryData(response) {
       id: resu.id,
       title: resu.title,
       link: linkify(resu.id),
-      upload_date: new Date(resu.upload_date * 1000),
-      upload_date_pretty: moment(new Date(resu.upload_date * 1000)).format(
-        "MMMM Do YYYY, h:mm:ss a"
-      ),
-      scanlator: resu.scanlantor ? resu.scanlator : "No scanlator specified.",
+      upload_date: {
+        upload_date: new Date(resu.upload_date * 1000),
+        pretty: moment(new Date(resu.upload_date * 1000)).format(
+          "MMMM Do YYYY, h:mm:ss a"
+        ),
+      },
+      scanlator: resu.scanlator,
       num_pages: resu.num_pages,
       num_favorites: resu.num_favorites,
     });
