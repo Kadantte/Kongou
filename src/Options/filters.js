@@ -5,10 +5,6 @@ const {
   pageCheck,
   sortCheck,
 } = require("./Error-handling/Input/input.js");
-const {
-  resultsCheck,
-  serverCheck,
-} = require("./Error-handling/Output/output.js");
 function linkify(id) {
   return usrlink + "/g/" + id;
 }
@@ -30,8 +26,4 @@ function checkInput(words, sort, page, id) {
   pageCheck(page);
   idCheck(id);
 }
-function checkOutput(rest) {
-  resultsCheck(rest);
-  serverCheck(rest);
-}
-module.exports = { linkify, tagify, capitalize, checkInput, checkOutput };
+module.exports = { linkify, tagify, capitalize, checkInput };
