@@ -10,9 +10,7 @@
 The ShipGirl Project, feat Kongou; ⓒ Kancolle
 ```
 
-**A node.js battleship that directly uses nhentai's API.**<br>
-
-
+**A nodejs battleship that wraps around nhentai's API.**<br>
 
 ## Features
 
@@ -30,27 +28,25 @@ The ShipGirl Project, feat Kongou; ⓒ Kancolle
 npm i kongou
 ```
 
-
-## [Documentation](https://github.com/cCurmudgeon/Kongou/wiki)
+## [Documentation](https://github.com/Curstantine/Kongou/wiki)
 
 ### Functions
 
-1. [get()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#getnumber)
-2. [query()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#querykeyword-sort-page)
-3. [search()](https://github.com/cCurmudgeon/Kongou/wiki/Functions#searchkeyword)
+1. [get()](https://github.com/Curstantine/Kongou/wiki/Functions#getnumber)
+2. [query()](https://github.com/Curstantine/Kongou/wiki/Functions#querykeyword-sort-page)
+3. [search()](https://github.com/Curstantine/Kongou/wiki/Functions#searchkeyword)
 
 ### Examples
 
-1. [get()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#get)
-2. [query()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#query)
-3. [search()](https://github.com/cCurmudgeon/Kongou/wiki/Examples#search)
+1. [get()](https://github.com/Curstantine/Kongou/wiki/Examples#get)
+2. [query()](https://github.com/Curstantine/Kongou/wiki/Examples#query)
+3. [search()](https://github.com/Curstantine/Kongou/wiki/Examples#search)
 
 ### Options
- 
-1. [Sort](https://github.com/cCurmudgeon/Kongou/wiki/Options#sort)
-2. [Keyword](https://github.com/cCurmudgeon/Kongou/wiki/Options#keyword)
-3. [Page](https://github.com/cCurmudgeon/Kongou/wiki/Options#page)
 
+1. [Sort](https://github.com/Curstantine/Kongou/wiki/Options#sort)
+2. [Keyword](https://github.com/Curstantine/Kongou/wiki/Options#keyword)
+3. [Page](https://github.com/Curstantine/Kongou/wiki/Options#page)
 
 ## Examples
 
@@ -59,10 +55,14 @@ const kongou = require("kongou");
 const nhentai = new kongou();
 
 async function Q() {
-  const data = await nhentai.query("艦隊これくしょん");
-  console.log(data);
+    await nhentai
+      .get(223435)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
+  }
 }
-Q();
 ```
 
 or
@@ -71,11 +71,14 @@ or
 const kongou = require("kongou");
 const nhentai = new kongou();
 async function Q() {
-  await nhentai.query("艦隊これくしょん").then((data) => console.log(data));
+  await nhentai
+    .query("艦隊これくしょん")
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }
 Q();
 ```
 
-For more information check the [wiki](https://github.com/cCurmudgeon/Kongou/wiki).
+For more information check the [wiki](https://github.com/Curstantine/Kongou/wiki).
 
 [![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
