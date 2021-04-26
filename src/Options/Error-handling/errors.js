@@ -1,13 +1,13 @@
 class KongouError extends Error {
   constructor(code, message) {
-    super(`${message.blue} [${code}]`);
+    super(`${message} [${code}]`);
     this.name = "KongouError";
   }
 }
 
 class KongouClientError extends KongouError {
   constructor(code, message) {
-    super(code.red, message);
+    super(code, message);
     this.name = "KongouClientError";
   }
 }
