@@ -1,23 +1,22 @@
-const colors = require("colors");
 class KongouError extends Error {
   constructor(code, message) {
     super(`${message.blue} [${code}]`);
-    this.name = "KongouError".cyan;
+    this.name = "KongouError";
   }
 }
 
 class KongouClientError extends KongouError {
   constructor(code, message) {
     super(code.red, message);
-    this.name = "KongouClientError".cyan;
+    this.name = "KongouClientError";
   }
 }
 
 class KongouServerError extends KongouError {
   constructor(code, message) {
     super(code, message);
-    this.name = "KongouServerError".cyan;
+    this.name = "KongouServerError";
   }
 }
 
-module.exports = {KongouClientError, KongouServerError};
+module.exports = { KongouClientError, KongouServerError };
