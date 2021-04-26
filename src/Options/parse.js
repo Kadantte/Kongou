@@ -48,7 +48,7 @@ function details(response) {
     title: response.title,
     link: linkify(response.id),
     upload_date: {
-      upload_date: new Date(response.upload_date * 1000),
+      date: new Date(response.upload_date * 1000),
       pretty: moment(new Date(response.upload_date * 1000)).format(
         "MMMM Do YYYY, h:mm:ss a"
       ),

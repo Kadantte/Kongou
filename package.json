@@ -1,7 +1,7 @@
 {
   "name": "kongou",
-  "version": "2.4.3",
-  "description": "A Node.js wrapper that directly uses the nhentai's API",
+  "version": "2.5.0",
+  "description": "A nodejs wraps around nhentai's API",
   "main": "./src/index.js",
   "dependencies": {
     "colors": "^1.4.0",
@@ -9,16 +9,17 @@
     "node-fetch": "^2.6.1"
   },
   "scripts": {
-    "test": "node './src/test.js'"
+    "test": "cd src && node test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cCurmudgeon/kongou.git"
   },
   "keywords": [
-    "javascript"
+    "javascript",
+    "nhentai"
   ],
-  "author": "Curmudgeon",
+  "author": "Curstantine",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cCurmudgeon/kongou/issues"

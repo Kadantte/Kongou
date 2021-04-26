@@ -1,7 +1,8 @@
 const fetch = require("node-fetch");
 const { details, queryData } = require("./Options/parse");
 const { qlink } = require("./Options/links");
-const { checkInput, checkOutput } = require("./Options/filters");
+const { checkInput } = require("./Options/filters");
+const { KongouServerError } = require("./Options/Error-handling/errors");
 const baseurl = "https://nhentai.net/api/";
 
 class kongou {
@@ -12,12 +13,15 @@ class kongou {
    * @memberof kongou
    */
   async get(id) {
-    return new Promise(async (resolve) => {
-      checkInput(undefined, undefined, undefined, parseInt(id));
+    checkInput(undefined, undefined, undefined, parseInt(id));
+    return new Promise(async (resolve, reject) => {
       const response = await fetch(baseurl + "gallery/" + parseInt(id));
-      const data = await response.json();
-      checkOutput(data);
-      resolve(details(data));
+      if (response.status !== 200) {
+        return reject(
+          new KongouServerError(response.status, response.statusText)
+        );
+      }
+      resolve(details(response.json()));
     });
   }
 
@@ -32,32 +36,25 @@ class kongou {
    */
 
   async query(words, sort, page) {
-    return new Promise(async (resolve) => {
-      checkInput(words, parseInt(sort), parseInt(page), undefined);
+    checkInput(words, parseInt(sort), parseInt(page), undefined);
+    return new Promise(async (resolve, reject) => {
       const response = await fetch(
         encodeURI(qlink(words, parseInt(sort), parseInt(page)))
-      );
+      ).catch((error) => {
+        console.log(error.message);
+      });
       const data = await response.json();
-      checkOutput(data);
-      resolve(queryData(data));
-    });
-  }
 
-  /**
-   * Search from a certain keyword and returns the first most result.
-   * @param {string} words
-   * @returns response.json
-   * @memberof kongou
-   */
-  async search(words, sort = 3, page = 1) {
-    return new Promise(async (resolve) => {
-      checkInput(words, parseInt(sort), parseInt(page), undefined);
-      const response = await fetch(
-        encodeURI(qlink(words, parseInt(sort), parseInt(page)))
-      );
-      const data = await response.json();
-      checkOutput(data);
-      resolve(details(data.result[0]));
+      if (response.status !== 200) {
+        return reject(
+          new KongouServerError(response.status, response.statusText)
+        );
+      }
+      if (data.num_pages === 0) {
+        return reject(new KongouServerError("404", "No results found!"));
+      }
+
+      resolve(queryData(data));
     });
   }
 }
