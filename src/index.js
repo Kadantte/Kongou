@@ -21,7 +21,7 @@ class kongou {
           new KongouServerError(response.status, response.statusText)
         );
       }
-      resolve(details(response.json()));
+      resolve(details(await response.json()));
     });
   }
 

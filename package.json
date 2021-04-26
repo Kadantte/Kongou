@@ -1,10 +1,9 @@
 {
   "name": "kongou",
-  "version": "2.5.0",
+  "version": "2.5.3",
   "description": "A nodejs wraps around nhentai's API",
   "main": "./src/index.js",
   "dependencies": {
-    "colors": "^1.4.0",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
   },
