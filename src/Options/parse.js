@@ -1,5 +1,4 @@
 const moment = require("moment");
-const baselink = "https://i.nhentai.net/galleries/";
 const { linkify, tagify, capitalize } = require("./filters");
 const TYPE = {
   j: "jpg",
@@ -12,6 +11,7 @@ function details(response) {
   let category = [];
   let tags = [];
   let images = [];
+  let thumbnails = [];
   let result = [];
   response.tags.forEach((tag) => {
     if (tag.type === "language") {
@@ -41,18 +41,22 @@ function details(response) {
       });
   });
   response.images.pages.forEach((page, i) => {
-    images.push(`${baselink}${response.media_id}/${[i + 1]}.${TYPE[page.t]}`);
+    images.push(
+      `https://i.nhentai.net/galleries/${response.media_id}/${[i + 1]}.${
+        TYPE[page.t]
+      }`
+    );
+    thumbnails.push(
+      `https://t.nhentai.net/galleries/${response.media_id}/${[i + 1]}t.${
+        TYPE[page.t]
+      }`
+    );
   });
   details.push({
     id: response.id,
     title: response.title,
     link: linkify(response.id),
-    upload_date: {
-      date: new Date(response.upload_date * 1000),
-      pretty: moment(new Date(response.upload_date * 1000)).format(
-        "MMMM Do YYYY, h:mm:ss a"
-      ),
-    },
+    upload_date: new Date(response.upload_date * 1000),
     scanlator: response.scanlator,
     num_pages: response.num_pages,
     num_favorites: response.num_favorites,
@@ -62,7 +66,10 @@ function details(response) {
     language: language,
     category: category,
     tags: tags,
-    images: images,
+    images: {
+      full: images,
+      thumb: thumbnails,
+    },
   });
   return result[0];
 }
@@ -74,6 +81,7 @@ function queryData(response) {
     let category = [];
     let tags = [];
     let images = [];
+    let thumbnails = [];
 
     resu.tags.forEach((tag) => {
       if (tag.type === "language") {
@@ -103,18 +111,24 @@ function queryData(response) {
         });
     });
     resu.images.pages.forEach((page, i) => {
-      images.push(`${baselink}${resu.media_id}/${[i + 1]}.${TYPE[page.t]}`);
+      images.push(
+        `https://i.nhentai.net/galleries/${resu.media_id}/${[i + 1]}.${
+          TYPE[page.t]
+        }`
+      );
+    });
+    resu.images.pages.forEach((page, i) => {
+      thumbnails.push(
+        `https://t.nhentai.net/galleries/${resu.media_id}/${[i + 1]}t.${
+          TYPE[page.t]
+        }`
+      );
     });
     details.push({
       id: resu.id,
       title: resu.title,
       link: linkify(resu.id),
-      upload_date: {
-        upload_date: new Date(resu.upload_date * 1000),
-        pretty: moment(new Date(resu.upload_date * 1000)).format(
-          "MMMM Do YYYY, h:mm:ss a"
-        ),
-      },
+      upload_date: new Date(resu.upload_date * 1000),
       scanlator: resu.scanlator,
       num_pages: resu.num_pages,
       num_favorites: resu.num_favorites,
@@ -124,7 +138,10 @@ function queryData(response) {
       language: language,
       category: category,
       tags: tags,
-      images: images,
+      images: {
+        full: images,
+        thumb: thumbnails,
+      },
     });
   });
 

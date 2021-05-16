@@ -7,10 +7,8 @@ const baseurl = "https://nhentai.net/api/";
 
 class kongou {
   /**
-   * Get doujin details
+   * Get doujin details from gallery id
    * @param {string|number} id Gallery ID
-   * @returns response.json
-   * @memberof kongou
    */
   async get(id) {
     checkInput(undefined, undefined, undefined, parseInt(id));
@@ -26,13 +24,10 @@ class kongou {
   }
 
   /**
-   * Search from a certain keyword.
+   * Search from keyword words provided.
    * @param {string} words
    * @param {string|number} sort
    * @param {string|number} page
-   * **These parameters should be in the order specified else they won't work**
-   * @returns response.json
-   * @memberof kongou
    */
 
   async query(words, sort, page) {

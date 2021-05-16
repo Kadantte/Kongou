@@ -1,11 +1,11 @@
 //Run npm run test
 const kongou = require("./index");
 const nhentai = new kongou();
-const testType = 1; // 1 for GET, 2 for QUERY, 3 for SEARCH
+const testType = 1; // 1 for GET, 2 for QUERY
 async function test(Type) {
   async function GET() {
     await nhentai
-      .get(223435)
+      .get(85308) //223435
       .then((data) => {
         console.log(data);
       })
