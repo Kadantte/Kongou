@@ -1,5 +1,5 @@
-const { KongouClientError } = require("../errors.js");
-function sortCheck(sort) {
+import { KongouClientError } from "../errors.js";
+export default function sortCheck(sort) {
   if (sort !== undefined) {
     if (sort.length === 0) {
       throw new KongouClientError("Input Error", "No sort option provided.");
@@ -15,4 +15,3 @@ function sortCheck(sort) {
     }
   }
 }
-module.exports = { sortCheck };

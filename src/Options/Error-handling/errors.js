@@ -1,22 +1,20 @@
-class KongouError extends Error {
+export class KongouError extends Error {
   constructor(code, message) {
     super(`${message} [${code}]`);
     this.name = "KongouError";
   }
 }
 
-class KongouClientError extends KongouError {
+export class KongouClientError extends KongouError {
   constructor(code, message) {
     super(code, message);
     this.name = "KongouClientError";
   }
 }
 
-class KongouServerError extends KongouError {
+export class KongouServerError extends KongouError {
   constructor(code, message) {
     super(code, message);
     this.name = "KongouServerError";
   }
 }
-
-module.exports = { KongouClientError, KongouServerError };

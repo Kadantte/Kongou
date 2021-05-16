@@ -4,9 +4,9 @@
   "description": "A node.js battleship that directly uses nhentai's API.",
   "main": "./src/index.js",
   "dependencies": {
-    "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
   },
+  "type": "module",
   "scripts": {
     "test": "cd src && node test"
   },
@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/Curstantine/Kongou/issues"
   },
-  "homepage": "https://github.com/Curstantine/kongou#readme"
+  "homepage": "https://github.com/Curstantine/kongou#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
+  }
 }

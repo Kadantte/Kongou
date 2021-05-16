@@ -1,14 +1,15 @@
-const fetch = require("node-fetch");
-const { details, queryData } = require("./Options/parse");
-const { qlink } = require("./Options/links");
-const { checkInput } = require("./Options/filters");
-const { KongouServerError } = require("./Options/Error-handling/errors");
+import fetch from "node-fetch";
+import qlink from "./Options/links.js";
+import { details, queryData } from "./Options/parse.js";
+import { checkInput } from "./Options/filters.js";
+import { KongouServerError } from "./Options/Error-handling/errors.js";
 const baseurl = "https://nhentai.net/api/";
 
 class kongou {
   /**
    * Get doujin details from gallery id
    * @param {string|number} id Gallery ID
+   * @async
    */
   async get(id) {
     checkInput(undefined, undefined, undefined, parseInt(id));
@@ -28,6 +29,7 @@ class kongou {
    * @param {string} words
    * @param {string|number} sort
    * @param {string|number} page
+   * @async
    */
 
   async query(words, sort, page) {
@@ -53,5 +55,4 @@ class kongou {
     });
   }
 }
-
-module.exports = kongou;
+export default new kongou();

@@ -1,17 +1,17 @@
 const usrlink = "https://nhentai.net";
-const {
+import {
   idCheck,
   keyCheck,
   pageCheck,
   sortCheck,
-} = require("./Error-handling/Input/input.js");
-function linkify(id) {
+} from "./Error-handling/Input/input.js";
+export function linkify(id) {
   return usrlink + "/g/" + id;
 }
-function tagify(link) {
+export function tagify(link) {
   return usrlink + link;
 }
-function capitalize(str) {
+export function capitalize(str) {
   const string = str
     .toString()
     .split("_")
@@ -20,10 +20,9 @@ function capitalize(str) {
     );
   return string[0];
 }
-function checkInput(words, sort, page, id) {
+export function checkInput(words, sort, page, id) {
   keyCheck(words);
   sortCheck(sort);
   pageCheck(page);
   idCheck(id);
 }
-module.exports = { linkify, tagify, capitalize, checkInput };

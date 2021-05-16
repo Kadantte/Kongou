@@ -1,11 +1,10 @@
-const moment = require("moment");
-const { linkify, tagify, capitalize } = require("./filters");
+import { linkify, tagify, capitalize } from "./filters.js";
 const TYPE = {
   j: "jpg",
   p: "png",
   g: "gif",
 };
-function details(response) {
+export function details(response) {
   let details = [];
   let language = [];
   let category = [];
@@ -73,7 +72,7 @@ function details(response) {
   });
   return result[0];
 }
-function queryData(response) {
+export function queryData(response) {
   let query = [];
   response.result.forEach((resu) => {
     let details = [];
@@ -147,4 +146,3 @@ function queryData(response) {
 
   return query;
 }
-module.exports = { details, queryData };

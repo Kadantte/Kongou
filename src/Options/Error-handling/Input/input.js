@@ -1,6 +1,6 @@
-const {idCheck} = require('./id');
-const {keyCheck} = require('./keywords');
-const {pageCheck} = require('./page');
-const {sortCheck} = require('./sort');
+import idCheck from "./id.js";
+import keyCheck from "./keywords.js";
+import pageCheck from "./page.js";
+import sortCheck from "./sort.js";
 
-module.exports = {idCheck, keyCheck, pageCheck, sortCheck};
+export { idCheck, keyCheck, pageCheck, sortCheck };
