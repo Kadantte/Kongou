@@ -1,5 +1,5 @@
-import { KongouClientError } from "../errors.js";
-export default function pageCheck(page) {
+const { KongouClientError } = require("../errors.js");
+module.exports = function pageCheck(page) {
   if (page !== undefined) {
     if (page.length === 0) {
       throw new KongouClientError(
@@ -14,4 +14,4 @@ export default function pageCheck(page) {
       throw new KongouClientError("Input Error", "Page should be a number.");
     }
   }
-}
+};

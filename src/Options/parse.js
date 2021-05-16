@@ -1,10 +1,10 @@
-import { linkify, tagify, capitalize } from "./filters.js";
+const { linkify, tagify, capitalize } = require("./filters.js");
 const TYPE = {
   j: "jpg",
   p: "png",
   g: "gif",
 };
-export function details(response) {
+function details(response) {
   let details = [];
   let language = [];
   let category = [];
@@ -72,7 +72,7 @@ export function details(response) {
   });
   return result[0];
 }
-export function queryData(response) {
+function queryData(response) {
   let query = [];
   response.result.forEach((resu) => {
     let details = [];
@@ -146,3 +146,4 @@ export function queryData(response) {
 
   return query;
 }
+module.exports = { details, queryData };
