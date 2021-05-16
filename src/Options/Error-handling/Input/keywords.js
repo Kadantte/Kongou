@@ -1,5 +1,5 @@
-import { KongouClientError } from "../errors.js";
-export default function keyCheck(keyword) {
+const { KongouClientError } = require("../errors.js");
+module.exports = function keyCheck(keyword) {
   if (keyword !== undefined) {
     if (keyword.length === 0) {
       throw new KongouClientError("Input Error", "No keywords provided");
@@ -8,4 +8,4 @@ export default function keyCheck(keyword) {
       throw new KongouClientError("Input Error", "Keyword should be a string");
     }
   }
-}
+};

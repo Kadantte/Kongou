@@ -1,5 +1,5 @@
 //Run npm run test
-import kongou from "./index.js";
+const kongou = require("./index");
 const testType = 1; // 1 for GET, 2 for QUERY
 function test(Type) {
   async function GET() {

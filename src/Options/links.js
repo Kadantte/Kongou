@@ -4,7 +4,7 @@ const SORT = {
   2: "popular-week",
   3: "popular",
 };
-export default function qlink(words, sort, page) {
+function qlink(words, sort, page) {
   if (!sort && !page) {
     return querypath + words + "&sort=popular" + "&page=1";
   }
@@ -14,3 +14,4 @@ export default function qlink(words, sort, page) {
     return querypath + words + "&sort=" + SORT[sort] + "&page=" + page;
   }
 }
+module.exports = { qlink };

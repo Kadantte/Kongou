@@ -1,5 +1,5 @@
-import { KongouClientError } from "../errors.js";
-export default function idCheck(id) {
+const { KongouClientError } = require("../errors.js");
+module.exports = function idCheck(id) {
   if (id !== undefined) {
     if (id.length === 0) {
       throw new KongouClientError("Input Error", "No ID provided");
@@ -12,4 +12,4 @@ export default function idCheck(id) {
       throw new KongouClientError("Input Error", "ID should be a number.");
     }
   }
-}
+};

@@ -1,4 +1,13 @@
-# v2.5.4
+# Changelog
+
+## v2.5.5
+
+This update "fixes" the module problem.
+
+- Moved back to `modules.export`.
+- All previous features are still in pact.
+
+## v2.5.4
 
 These new updates somewhat break v2.5.3, look at the updated wiki for more information.
 
