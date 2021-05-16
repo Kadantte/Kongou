@@ -4,7 +4,7 @@
 
 This update "fixes" the module problem.
 
-- Moved back to `modules.export`.
+- Moved back to `module.exports`.
 - All previous features are still in pact.
 
 ## v2.5.4
