@@ -1,18 +1,18 @@
 {
   "name": "kongou",
-  "version": "2.5.3",
-  "description": "A nodejs wraps around nhentai's API",
+  "version": "2.5.4",
+  "description": "A node.js battleship that directly uses nhentai's API.",
   "main": "./src/index.js",
   "dependencies": {
-    "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
   },
+  "type": "module",
   "scripts": {
     "test": "cd src && node test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cCurmudgeon/kongou.git"
+    "url": "git+https://github.com/Curstantine/kongou.git"
   },
   "keywords": [
     "javascript",
@@ -21,10 +21,13 @@
   "author": "Curstantine",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cCurmudgeon/kongou/issues"
+    "url": "https://github.com/Curstantine/Kongou/issues"
   },
-  "homepage": "https://github.com/cCurmudgeon/kongou#readme",
+  "homepage": "https://github.com/Curstantine/Kongou#readme",
   "devDependencies": {
-    "jshint": "^2.12.0"
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
   }
 }

@@ -1,4 +1,2 @@
-.jshintrc
 node_modules
-.npmrc
-.github
+.eslintrc.yml
