@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/Curstantine/Kongou/issues"
   },
-  "homepage": "https://github.com/Curstantine/kongou#readme",
+  "homepage": "https://github.com/Curstantine/Kongou#readme",
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-plugin-import": "^2.23.2",
