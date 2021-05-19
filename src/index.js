@@ -7,8 +7,9 @@ const baseurl = "https://nhentai.net/api/";
 
 class kongou {
   /**
-   * Get doujin details = require( gallery id
-   * @param {string|number} id Gallery ID
+   * Returns book details from gallery ID.
+   * @param {String|Number} id Gallery ID
+   * @return {Object} nhentai book object.
    * @async
    */
   async get(id) {
@@ -25,10 +26,11 @@ class kongou {
   }
 
   /**
-   * Search = require( keyword words provided.
+   * Returns list of books with provided keywords
    * @param {string} words
    * @param {string|number} sort
    * @param {string|number} page
+   * @return {object} 25 nhentai book objects.
    * @async
    */
 
@@ -52,6 +54,26 @@ class kongou {
       }
 
       resolve(queryData(data));
+    });
+  }
+
+  /**
+   * Returns a random book using random endpoint.
+   * @return {Object} nHentai book object
+   * @author
+   * @async
+   */
+
+  async random() {
+    return new Promise(async (resolve, reject) => {
+      const response = await fetch("https://nhentai.net/random/");
+      if (response.status !== 200) {
+        return reject(
+          new KongouServerError(response.status, response.statusText)
+        );
+      }
+      let id = response.url.replace(/[^0-9]/g, "");
+      resolve(this.get(id));
     });
   }
 }

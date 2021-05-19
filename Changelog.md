@@ -1,10 +1,17 @@
 # Changelog
 
+## v2.5.6
+
+This update features @sinkaroid's random function.
+
+- Better comments?
+- `random()` function.
+
 ## v2.5.5
 
 This update "fixes" the module problem.
 
-- Moved back to `modules.export`.
+- Moved back to `module.exports`.
 - All previous features are still in pact.
 
 ## v2.5.4
