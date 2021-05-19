@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.5.6
+
+This update features @sinkaroid's random function.
+
+- Better comments?
+- `random()` function.
+
 ## v2.5.5
 
 This update "fixes" the module problem.
