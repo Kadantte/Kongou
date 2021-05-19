@@ -51,11 +51,10 @@ npm i kongou
 ## Examples
 
 ```js
-const kongou = require("kongou");
-const nhentai = new kongou();
+const kongou = require("kongou")
 
 async function Q() {
-    await nhentai
+    await kongou
       .get(223435)
       .then((data) => {
         console.log(data);
@@ -69,9 +68,8 @@ or
 
 ```js
 const kongou = require("kongou");
-const nhentai = new kongou();
 async function Q() {
-  await nhentai
+  await kongou
     .query("艦隊これくしょん")
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
