@@ -54,5 +54,24 @@ class kongou {
       resolve(queryData(data));
     });
   }
+  
+  /**
+   * Get random book
+   * @return {object} nHentai book object
+   */
+
+   async random() {
+    return new Promise(async (resolve, reject) => {
+      const res = await fetch('https://nhentai.net/random/');
+      let url = res.url.replace(/[^0-9]/g, "");
+      const response = await fetch(baseurl + "gallery/" + url);
+      if (response.status !== 200) {
+        return reject(
+          new KongouServerError(response.status, response.statusText)
+        );
+      }
+      resolve(details(await response.json()));
+    });
+  }
 }
 module.exports = new kongou();
