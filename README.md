@@ -1,9 +1,6 @@
 # [**Kongou**](https://www.npmjs.com/package/kongou)
 
-<a href="https://i.imgur.com/6geUHqy.png">
-<img align="center" title="1st battlecruiser, Kongō class" src="https://i.imgur.com/6geUHqy.png"/>
-</a>
-
+[!image](https://i.imgur.com/6geUHqy.png)
 [<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)
 
 ```;

@@ -7,5 +7,5 @@ module.exports = function keyCheck(keyword) {
     if (typeof keyword !== "string") {
       throw new KongouClientError("Input Error", "Keyword should be a string");
     }
-  }
+  } else throw new KongouClientError("Input Error", "No keywords provided");
 };
