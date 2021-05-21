@@ -1,6 +1,6 @@
 # [**Kongou**](https://www.npmjs.com/package/kongou)
 
-[!image](https://i.imgur.com/6geUHqy.png)
+![image](https://i.imgur.com/6geUHqy.png)
 [<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)
 
 ```;
