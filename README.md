@@ -59,3 +59,5 @@ await kongou
 For more information check the [wiki](https://github.com/Curstantine/Kongou/wiki).
 
 [![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
+
+[![#nololiforce](https://media.discordapp.net/attachments/398390511842492417/694956805666897920/25662.gif)](https://www.fbi.gov/wanted/ecap)
