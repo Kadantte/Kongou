@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.5.7
+
+Small updates to Docs and error handling.
+
+- Added inteli docs for better understanding of what it does
+  ![image](https://i.imgur.com/wELvt3e.png)
+- Fixed the ID error handling bug.
+
 ## v2.5.6
 
 This update features @sinkaroid's random function.
