@@ -1,6 +1,5 @@
 const usrlink = "https://nhentai.net";
 const {
-  idCheck,
   keyCheck,
   pageCheck,
   sortCheck,
@@ -21,10 +20,9 @@ function capitalize(str) {
     );
   return string[0];
 }
-function checkInput(words, sort, page, id) {
+function checkInput(words, sort, page) {
   keyCheck(words);
   sortCheck(sort);
   pageCheck(page);
-  idCheck(id);
 }
 module.exports = { linkify, tagify, capitalize, checkInput };

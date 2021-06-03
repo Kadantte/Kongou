@@ -1,30 +1,24 @@
 # [**Kongou**](https://www.npmjs.com/package/kongou)
 
-<a href="https://i.imgur.com/6geUHqy.png">
-<img align="center" title="1st battlecruiser, Kongō class" src="https://i.imgur.com/6geUHqy.png"/>
-</a>
-
-[<p align=center> Original Artwork](https://www.pixiv.net/en/artworks/83860230)
+[![image](https://i.imgur.com/6geUHqy.png)](https://www.pixiv.net/en/artworks/83860230)
 
 ```;
 The ShipGirl Project, feat Kongou; ⓒ Kancolle
 ```
 
-**A nodejs battleship that wraps around nhentai's API.**<br>
+**A nodejs battleship that wraps around nhentai's API.**
 
 ## Features
 
-✅ Simple
-
-✅ Stable
+✅ Simple & Stable
 
 ✅ 100% API coverage
 
-✅ Cutest shipgirl ❤ (Very Important)
+✅ Cute shipgirl ❤
 
 ## Installation
 
-```bash
+```sh
 npm i kongou
 ```
 
@@ -32,15 +26,9 @@ npm i kongou
 
 ### Functions
 
-1. [get()](https://github.com/Curstantine/Kongou/wiki/Functions#getnumber)
-2. [query()](https://github.com/Curstantine/Kongou/wiki/Functions#querykeyword-sort-page)
-3. [search()](https://github.com/Curstantine/Kongou/wiki/Functions#searchkeyword)
-
-### Examples
-
-1. [get()](https://github.com/Curstantine/Kongou/wiki/Examples#get)
-2. [query()](https://github.com/Curstantine/Kongou/wiki/Examples#query)
-3. [search()](https://github.com/Curstantine/Kongou/wiki/Examples#search)
+1. [get()](https://github.com/Curstantine/Kongou/wiki/Functions#get)
+2. [query()](https://github.com/Curstantine/Kongou/wiki/Functions#query)
+3. [random()](https://github.com/Curstantine/Kongou/wiki/Functions#random)
 
 ### Options
 
@@ -51,32 +39,25 @@ npm i kongou
 ## Examples
 
 ```js
-const kongou = require("kongou")
-
-async function Q() {
-    await kongou
-      .get(223435)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => console.log(error));
-  }
-}
+const kongou = require("kongou");
+await kongou
+  .get(223435)
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
 ```
 
 or
 
 ```js
 const kongou = require("kongou");
-async function Q() {
-  await kongou
-    .query("艦隊これくしょん")
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
-}
-Q();
+await kongou
+  .query("艦隊これくしょん")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
 ```
 
 For more information check the [wiki](https://github.com/Curstantine/Kongou/wiki).
 
 [![Discord](https://img.shields.io/discord/698062395263942686?color=%235A71C3&label=Discord&logo=discord&logoColor=white)](https://discord.gg/ymuR2htTfy)
+
+[![#nololiforce](https://media.discordapp.net/attachments/398390511842492417/694956805666897920/25662.gif)](https://www.fbi.gov/wanted/ecap)
